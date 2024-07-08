@@ -1,0 +1,28 @@
+@import "/src/styles/colors";
+@import "/src/styles/typography";
+@import "/src/styles/components";
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	gap: 1.5rem 1rem;
+	width: 100%;
+}
+
+.title {
+	@extend %header;
+	color: $neutralColor900;
+	grid-column: span 12;
+}
+
+$sizes: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+
+@each $size in $sizes {
+	.grid-#{$size} {
+		grid-column: span $size;
+	}
+}
+
+.button {
+	@extend %primaryButton;
+}

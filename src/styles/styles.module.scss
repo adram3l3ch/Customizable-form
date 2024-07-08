@@ -1,0 +1,83 @@
+@import "./colors";
+@import "./responsive";
+@import "./components";
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@200..800&display=swap");
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: Karla, sans-serif;
+	scrollbar-color: rgba($primaryColor600, 0.2) $primaryColor200;
+	scrollbar-width: thin;
+}
+
+code {
+	white-space: pre-wrap;
+	background-color: $primaryColor200;
+	border-radius: 0.5rem;
+	padding: 2rem;
+	font-family: monospace;
+	font-size: 1rem;
+}
+.container {
+	background-color: $primaryColor200;
+	height: 100dvh;
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 1fr auto;
+	place-items: center;
+}
+
+.formContainer {
+	padding: 0.5rem;
+	width: 100%;
+	max-height: 100dvh;
+	overflow: hidden;
+	display: flex;
+
+	@include responsive(sm) {
+		padding: 2rem;
+	}
+}
+
+.form {
+	background-color: $neutralColor;
+	padding: 1.5rem;
+	border-radius: 1rem;
+	max-width: 45rem;
+	margin-inline: auto;
+	max-height: 100%;
+	overflow: auto;
+
+	@include responsive(md) {
+		padding: 2.5rem;
+	}
+}
+
+.input {
+	width: 100%;
+	display: grid;
+	gap: 1rem;
+	@include responsive(md) {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.radioOption {
+	padding: 1rem 1.5rem;
+	border: 1px solid $neutralColor900;
+	display: flex;
+	width: 100%;
+	align-items: center;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	margin-top: 0.5rem;
+}
+
+.consent {
+	margin-block: 1rem;
+	grid-column: span 12;
+}

@@ -1,0 +1,55 @@
+@import "/src/styles/colors";
+@import "/src/styles/responsive";
+@import "/src/styles/components";
+
+.drawer {
+	width: 0;
+	background-color: $neutralColor;
+	height: 100%;
+	position: fixed;
+	right: 0;
+	transition: width 0.2s ease-in-out;
+
+	h4 span {
+		color: $primaryColor600;
+	}
+
+	@include responsive(xl) {
+		position: relative;
+	}
+
+	&.open {
+		width: min(40rem, 90vw);
+	}
+
+	> div {
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+		gap: 1rem;
+		padding: 1rem 0.5rem;
+		overflow: auto;
+
+		@include responsive(md) {
+			padding: 2rem;
+		}
+	}
+
+	.handle {
+		@extend %primaryButton;
+		position: absolute;
+		left: 0;
+		border-radius: 0.25rem 0 0 0.25rem;
+		translate: -100% 0;
+	}
+}
+
+.editor {
+	border-radius: 0.5rem;
+	overflow: hidden;
+	height: 500px !important;
+}
+
+.button {
+	@extend %primaryButton;
+}

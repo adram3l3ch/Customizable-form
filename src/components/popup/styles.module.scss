@@ -1,0 +1,45 @@
+@import "/src/styles/colors";
+@import "/src/styles/typography";
+
+.container {
+	position: fixed;
+	padding: 1rem;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%) translateY(-100%);
+	color: $neutralColor;
+	border-radius: 0.5rem;
+	transition: all 0.2s ease-in-out;
+	display: grid;
+	gap: 0.5rem;
+	max-width: min(30rem, 95vw);
+
+	&.success {
+		background-color: $primaryColor900;
+	}
+
+	&.error {
+		background-color: $errorColor;
+	}
+
+	&.warning {
+		background-color: $warningColor;
+	}
+
+	.title {
+		@extend %label;
+		font-weight: 700;
+		display: flex;
+		gap: 0.5rem;
+		align-items: center;
+	}
+
+	.content {
+		@extend %label;
+	}
+
+	&.open {
+		transform: translateX(-50%) translateY(0);
+		top: 1rem;
+	}
+}
