@@ -34,10 +34,10 @@ const Drawer = (props: DrawerProps) => {
 		onToggle,
 	} = props;
 	return (
-		<div className={combineClassNames([styles.drawer, styles[isOpen ? "open" : ""]])}>
-			<div>
+		<section className={combineClassNames([styles.drawer, styles[isOpen ? "open" : ""]])}>
+			<button className={styles.handle} onClick={onToggle}>{`<`}</button>
+			<div tabIndex={-1}>
 				<h2>Customize form</h2>
-				<button className={styles.handle} onClick={onToggle}>{`<`}</button>
 				<h4>
 					Inputs: <span>FormProps</span>
 				</h4>
@@ -68,7 +68,7 @@ const Drawer = (props: DrawerProps) => {
 					Save Function
 				</button>
 			</div>
-		</div>
+		</section>
 	);
 };
 

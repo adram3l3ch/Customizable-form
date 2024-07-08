@@ -32,7 +32,7 @@ const PopupProvider = ({ children }: { children: JSX.Element }) => {
 	return (
 		<PopupContext.Provider value={{ triggerPopup, closePopup }}>
 			{children}
-			<div
+			<section
 				className={combineClassNames([
 					styles.container,
 					styles[popupState.type],
@@ -40,11 +40,11 @@ const PopupProvider = ({ children }: { children: JSX.Element }) => {
 				])}
 			>
 				<h5 className={styles.title}>
-					<img src={SuccessTick} />
+					<img src={SuccessTick} alt="success-tick" />
 					{popupState.title}
 				</h5>
 				<div className={styles.content}>{popupState.content}</div>
-			</div>
+			</section>
 		</PopupContext.Provider>
 	);
 };

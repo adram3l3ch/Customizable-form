@@ -19,7 +19,7 @@ const Input = (props: InputProps) => {
 
 	const id = useId();
 	return (
-		<div className={combineClassNames([styles.container, className, error && styles.error])}>
+		<article className={combineClassNames([styles.container, className, error && styles.error])}>
 			{label && !inputLabel && (
 				<label className={labelClassName} htmlFor={id}>
 					{label} {required && <span>*</span>}
@@ -55,8 +55,12 @@ const Input = (props: InputProps) => {
 					</label>
 				)}
 			</div>
-			{error && <div className={styles.error}>{error}</div>}
-		</div>
+			{error && (
+				<div className={styles.error} aria-errormessage={error}>
+					{error}
+				</div>
+			)}
+		</article>
 	);
 };
 

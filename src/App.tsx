@@ -71,8 +71,8 @@ const App = () => {
 	};
 
 	return (
-		<div className={styles.container}>
-			<div className={styles.formContainer}>
+		<main className={styles.container}>
+			<section className={styles.formContainer}>
 				<Form
 					title="Contact Us"
 					errors={errors}
@@ -82,7 +82,7 @@ const App = () => {
 					onChange={handleChange}
 					onSubmit={handleFormSubmit}
 				/>
-			</div>
+			</section>
 			<Drawer
 				functionText={validationFunctionText}
 				inputText={inputText}
@@ -93,7 +93,7 @@ const App = () => {
 				onInputTextChange={setInputText}
 				onToggle={() => setIsDrawerOpen(ps => !ps)}
 			/>
-		</div>
+		</main>
 	);
 };
 

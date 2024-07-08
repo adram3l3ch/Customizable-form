@@ -44,6 +44,10 @@
 			width: max-content;
 			width: 1rem;
 			height: 1rem;
+
+			&:focus {
+				outline: 1px solid;
+			}
 		}
 		&:hover,
 		&:focus {
