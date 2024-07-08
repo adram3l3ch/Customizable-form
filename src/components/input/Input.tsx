@@ -19,7 +19,7 @@ const Input = (props: InputProps) => {
 
 	const id = useId();
 	return (
-		<article className={combineClassNames([styles.container, className, error && styles.error])}>
+		<div className={combineClassNames([styles.container, className, error && styles.error])}>
 			{label && !inputLabel && (
 				<label className={labelClassName} htmlFor={id}>
 					{label} {required && <span>*</span>}
@@ -60,7 +60,7 @@ const Input = (props: InputProps) => {
 					{error}
 				</div>
 			)}
-		</article>
+		</div>
 	);
 };
 
